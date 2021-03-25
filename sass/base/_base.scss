@@ -1,0 +1,18 @@
+/* selettore universale, non ha specificità*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+/* definisco la root, il font size era prima 10px
+ così è facile calcolare gli altri, ma per chi usa 
+ lo zoom del browser o aumenta il font meglio usare 
+ le percentuali del default (16px)*/
+html {
+  font-size: 62.5%;
+}
+body {
+  box-sizing: border-box;
+}
