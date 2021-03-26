@@ -1,4 +1,5 @@
 .footer {
+  color: $color-gray-light-1;
   background-color: $color-gray-dark-3;
   padding: 10rem 0;
   font-size: 1.4rem;
@@ -14,6 +15,9 @@
   }
 
   &__navigation {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    display: inline-block;
   }
 
   &__list {
@@ -25,6 +29,13 @@
     &:not(:last-child) {
       margin-right: 1.5rem;
     }
+  }
+
+  &__copyright {
+    border-top: 1px solid $color-gray-dark;
+    padding-top: 2rem;
+    width: 80%;
+    float: right;
   }
 
   &__link {
