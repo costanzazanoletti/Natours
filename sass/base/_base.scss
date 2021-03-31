@@ -9,10 +9,39 @@
 /* definisco la root, il font size era prima 10px
  così è facile calcolare gli altri, ma per chi usa 
  lo zoom del browser o aumenta il font meglio usare 
- le percentuali del default (16px)*/
+ le percentuali del default (16px)
+ Nel resto dello stile uro rem come unità di misura
+ in modo che scali sempre su questa dimensione (10px)
+ ma se uno aumenta la dimensione del carattere del browser
+ il resto si ridimensiona di conseguenza
+ */
 html {
-  font-size: 62.5%;
+  //this defines what 1rem is
+  font-size: 62.5%; // 1rem=10px (10/16=62.5%)
+
+  @include respond(tab-land) {
+    //width < 1200?
+    font-size: 56.25%; // 1rem=9px (9/16=56.25%)
+  }
+  @include respond(tab-port) {
+    //width < 900?
+    font-size: 50%; // 1rem=8px (8/16=50%)
+  }
+  @include respond(phone) {
+    //width < 600?
+    // not necessary, we have the tab-port definition which is applied
+  }
+
+  @include respond(big-desktop) {
+    //width > 1800?
+    font-size: 75%; // 1rem=12px (812/16=75%)
+  }
 }
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
